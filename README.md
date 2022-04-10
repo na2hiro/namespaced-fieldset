@@ -17,7 +17,7 @@ See the demo TODO
 
 ## How it works
 
-You can define namespace with `<Fieldset>`, respecting [native `<fieldset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset) for grouping inputs, then `<Input>`s are aware of it. 
+You can define namespace with `<Fieldset>`, which respects [native `<fieldset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset) for grouping inputs, then `<Input>`s are aware of namespaces defined in ancestor nodes. 
 
 ```typescript jsx
 <form>
@@ -26,7 +26,7 @@ You can define namespace with `<Fieldset>`, respecting [native `<fieldset>`](htt
         <Input name="name" value="Jane" />
         <Input name="age" value="31" />
     </Fieldset>
-    {/* You can also choose not to render <fieldset> */}
+    {/* You can also choose not to render <fieldset> with the headless component */}
     <Fieldset.Headless namespace="person[1]">
         <Input name="name" value="Jack" />
         <Input name="age" value="30" />
@@ -59,6 +59,7 @@ constructFromFormData(new FormData(formElement));
     ]
 })
 ```
+Refer to [`qs` doc](https://github.com/ljharb/qs#readme) for how names are mapped to object keys.
 
 ## Use with custom input-like components
 You can turn your input-line components into ones which is aware of namespaces.

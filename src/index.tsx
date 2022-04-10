@@ -62,7 +62,7 @@ const IntrinsicInput: React.VFC<InputHTMLAttributes<HTMLInputElement>> = (props)
 /**
  * An input element which is aware of namespace.
  *
- * e.g. `<Fieldset namespace="person"><Input name="age" value="31" /></Fieldset>` will render `<input name="person.age" value="31" />`
+ * e.g. `<Input name="age" value="31" />` surrounded by <Fieldset namespace="person"> ... </Fieldset>` renders `<input name="person.age" value="31" />`
  */
 export const Input: React.VFC<InputHTMLAttributes<HTMLInputElement>> = namespaceAware(IntrinsicInput);
 

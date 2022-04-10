@@ -15,7 +15,8 @@
   "scripts": {
     "build": "microbundle",
     "dev": "microbundle watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:watch": "vitest",
+    "test": "vitest run"
   },
   "keywords": [
     "namespaced inputs",
@@ -27,11 +28,16 @@
   "author": "na2hiro <a@81.la>",
   "license": "MIT",
   "devDependencies": {
+    "@testing-library/react": "^8",
     "@types/react": "^16.9",
-    "microbundle": "^0.14.2"
+    "jsdom": "^19.0.0",
+    "microbundle": "^0.14.2",
+    "react": "^16.14",
+    "react-dom": "^16.14",
+    "vitest": "^0.9.3"
   },
   "peerDependencies": {
-    "react": ">=16.9 <19.0"
+    "react": ">=16.14 <19.0"
   },
   "dependencies": {
     "qs": "^6.9"
