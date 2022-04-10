@@ -5,8 +5,11 @@
   "type": "module",
   "source": "src/index.tsx",
   "exports": {
-    "require": "./dist/index.cjs",
-    "default": "./dist/index.modern.js"
+    ".": "./dist/index.cjs",
+    "./esm": "./dist/index.esm.js",
+    "./umd": "./dist/index.umd.js",
+    "./modern": "./dist/index.modern.js",
+    "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
@@ -37,7 +40,8 @@
     "vitest": "^0.9.3"
   },
   "peerDependencies": {
-    "react": ">=16.14 <19.0"
+    "react": ">=16.14 <19.0",
+    "react-dom": ">=16.14 <19.0"
   },
   "dependencies": {
     "qs": "^6.9"

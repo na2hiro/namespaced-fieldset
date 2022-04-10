@@ -1,0 +1,124 @@
+// Vitest Snapshot v1
+
+exports[`<Fieldset /> > accepts deeper namespaces with array and dot notations 1`] = `
+<div>
+  <form>
+    <fieldset>
+      <input
+        name="person[0].name"
+        value="Jane"
+      />
+      <fieldset>
+        <input
+          name="person[0].hobby.pet.kind"
+          value="koala"
+        />
+      </fieldset>
+    </fieldset>
+    <fieldset>
+      <input
+        name="person[1].name"
+        value="Jack"
+      />
+      <fieldset>
+        <input
+          name="person[1].hobby.favorite.cities[0]"
+          value="Kyoto"
+        />
+      </fieldset>
+    </fieldset>
+  </form>
+</div>
+`;
+
+exports[`<Fieldset /> > adds namespaces with nesting 1`] = `
+<div>
+  <fieldset>
+    <input
+      name="topLevel.attribute"
+      value="outer value"
+    />
+    <fieldset>
+      <input
+        name="topLevel.secondLevel.attribute"
+        value="inner value"
+      />
+    </fieldset>
+  </fieldset>
+</div>
+`;
+
+exports[`<Fieldset /> > renders fieldset 1`] = `
+<div>
+  <fieldset>
+    <input
+      name="topLevel.attribute"
+      value="value"
+    />
+    <input
+      name="topLevel.others"
+      value="foobar"
+    />
+  </fieldset>
+</div>
+`;
+
+exports[`<Fieldset.Headless /> > adds namespaces with nesting, mixed with head-ful ones 1`] = `
+<div>
+  <input
+    name="topLevel.foo"
+    value="top-level value"
+  />
+  <input
+    name="topLevel.secondLevelHeadless.bar"
+    value="headless second level"
+  />
+  <fieldset>
+    <input
+      name="topLevel.secondLevelHeadful.baz"
+      value="headful second level"
+    />
+  </fieldset>
+</div>
+`;
+
+exports[`<Fieldset.Headless /> > doesn't render fieldset 1`] = `
+<div>
+  <input
+    name="topLevel.attribute"
+    value="value"
+  />
+  <input
+    name="topLevel.others"
+    value="foobar"
+  />
+</div>
+`;
+
+exports[`<Input> > works without wrapping with Fieldset 1`] = `
+<div>
+  <form>
+    <input
+      name="name"
+      value="value"
+    />
+    <input
+      type="submit"
+      value="Proceed"
+    />
+  </form>
+</div>
+`;
+
+exports[`namespaceAware() > turns a component which takes name into a namespace aware one 1`] = `
+<div>
+  <fieldset>
+    <div>
+      gorgeous UI here! 
+      <input
+        name="topLevel.value"
+      />
+    </div>
+  </fieldset>
+</div>
+`;
