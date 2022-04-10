@@ -1,0 +1,38 @@
+{
+  "name": "namespaced-inputs",
+  "version": "0.0.0",
+  "description": "Gives inputs a superpower of namespaces, which allows constructing complex objects with form elements",
+  "type": "module",
+  "source": "src/index.tsx",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.esm.js",
+  "unpkg": "./dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "namespaced inputs",
+    "react",
+    "remix",
+    "fieldset",
+    "uncontrolled inputs"
+  ],
+  "author": "na2hiro <a@81.la>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.9",
+    "microbundle": "^0.14.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.9 <19.0"
+  },
+  "dependencies": {
+    "qs": "^6.9"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "module": "ESNext",
+  "target": "ESNext",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "jsxFactory": "React.createElement"
+  }
+}
