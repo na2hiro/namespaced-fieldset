@@ -1,4 +1,4 @@
-# `namespaced-inputs`
+# `namespaced-fieldset`
 
 A tiny React utils which gives uncontrolled `<input>` elements a power of namespaces, and allows constructing complex objects
 
@@ -65,7 +65,7 @@ Refer to [`qs` doc](https://github.com/ljharb/qs#readme) for how names are mappe
 You can turn your input-line components into ones which is aware of namespaces.
 
 ```typescript jsx
-import {namespaceAware} from "namespaced-inputs";
+import {namespaceAware} from "namespaced-fieldset";
 
 const DatePicker = ({name}) => (
     <div>
