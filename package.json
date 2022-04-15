@@ -1,5 +1,5 @@
 {
-  "name": "namespaced-inputs",
+  "name": "namespaced-fieldset",
   "version": "0.0.0",
   "description": "A tiny React utils which gives uncontrolled <input> elements a power of namespaces, and allows constructing complex objects",
   "type": "module",
