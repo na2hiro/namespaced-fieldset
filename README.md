@@ -15,6 +15,12 @@ This library comes in to **help construct object of user's inputs from uncontrol
 
 Try out [live demo](https://namespaced-fieldset-example.na2hiro.workers.dev/) (source code is [here](https://github.com/na2hiro/namespaced-fieldset-example))
 
+## Installation
+
+```shell
+npm i namespaced-fieldset
+```
+
 ## How it works
 
 You can define namespace with `<Fieldset>`, which respects [native `<fieldset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset) for grouping inputs, then `<Input>`s are aware of namespaces defined in ancestor nodes. 
