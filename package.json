@@ -22,14 +22,22 @@
     "test": "vitest run"
   },
   "keywords": [
-    "namespaced inputs",
-    "react",
-    "remix",
+    "namespaced fieldset",
+    "namespaced",
     "fieldset",
-    "uncontrolled inputs"
+    "uncontrolled inputs",
+    "uncontrolled components",
+    "uncontrolled",
+    "react",
+    "remix"
   ],
   "author": "na2hiro <a@81.la>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/na2hiro/namespaced-fieldset.git"
+  },
+  "homepage": "https://github.com/na2hiro/namespaced-fieldset#readme",
   "devDependencies": {
     "@testing-library/react": "^8",
     "@types/react": "^16.9",
