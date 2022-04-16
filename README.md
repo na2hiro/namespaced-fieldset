@@ -13,7 +13,7 @@ This library comes in to **help construct object of user's inputs from uncontrol
 
 ## Demo
 
-See the demo TODO
+Try out [live demo](https://namespaced-fieldset-example.na2hiro.workers.dev/) (source code is [here](https://github.com/na2hiro/namespaced-fieldset-example))
 
 ## How it works
 
