@@ -1,4 +1,13 @@
-import React, {createContext, FieldsetHTMLAttributes, Fragment, InputHTMLAttributes, useContext} from "react";
+import React, {
+    ButtonHTMLAttributes,
+    createContext,
+    FieldsetHTMLAttributes,
+    Fragment,
+    InputHTMLAttributes,
+    SelectHTMLAttributes,
+    TextareaHTMLAttributes,
+    useContext
+} from "react";
 import qs from "qs";
 
 const NamespaceContext = createContext("");
@@ -35,7 +44,7 @@ const IntrinsicFieldset: React.VFC<FieldsetHTMLAttributes<HTMLFieldSetElement>> 
 /**
  * A fieldset element, which provides descendant input elements with a namespace.
  */
-export const Fieldset = namespace(IntrinsicFieldset) as (React.FC<Props & FieldsetHTMLAttributes<HTMLFieldSetElement>> & { Headless: React.FC<Props> });
+const Fieldset = namespace(IntrinsicFieldset) as (React.FC<Props & FieldsetHTMLAttributes<HTMLFieldSetElement>> & { Headless: React.FC<Props> });
 
 /**
  * Headless version of Fieldset component: it doesn't render a fieldset.
@@ -48,15 +57,11 @@ Fieldset.Headless = namespace(Fragment);
  * e.g. `const NamespaceAwareDatePicker = namespaceAware(DatePicker);` and then `<NamespaceAwareDatePicker name="date" />`
  * @param InputLikeComponent
  */
-export const namespaceAware = <T, >(InputLikeComponent: React.ComponentType<T & { name?: string }>) => {
+const namespaceAware = <T, >(InputLikeComponent: React.ComponentType<T & { name?: string }>) => {
     return (props: T & { name?: string }) => {
         const nestedName = useNamespace(props.name);
         return <InputLikeComponent {...props} name={nestedName}/>
     };
-}
-
-const IntrinsicInput: React.VFC<InputHTMLAttributes<HTMLInputElement>> = (props) => {
-    return <input {...props} />
 }
 
 /**
@@ -64,13 +69,17 @@ const IntrinsicInput: React.VFC<InputHTMLAttributes<HTMLInputElement>> = (props)
  *
  * e.g. `<Input name="age" value="31" />` surrounded by <Fieldset namespace="person"> ... </Fieldset>` renders `<input name="person.age" value="31" />`
  */
-export const Input: React.VFC<InputHTMLAttributes<HTMLInputElement>> = namespaceAware(IntrinsicInput);
+const Input: React.VFC<InputHTMLAttributes<HTMLInputElement>> = namespaceAware((props) => <input {...props} />);
+const Button: React.VFC<ButtonHTMLAttributes<HTMLButtonElement>> = namespaceAware((props) => <button {...props} />);
+const Select: React.VFC<SelectHTMLAttributes<HTMLSelectElement>> = namespaceAware((props) => <select {...props} />);
+const Textarea: React.VFC<TextareaHTMLAttributes<HTMLTextAreaElement>> = namespaceAware((props) =>
+    <textarea {...props} />);
 
 /**
  * Constructs an object from a query string serialized from a form with namespaced inputs. This is often useful on server side.
  * @param queryString
  */
-export const constructFromQueryString = (queryString: string) => {
+const constructFromQueryString = (queryString: string) => {
     return qs.parse(queryString, {allowDots: true, depth: 1000});
 }
 
@@ -78,7 +87,14 @@ export const constructFromQueryString = (queryString: string) => {
  * Constructs an object from a FormData made by a form with namespaced inputs. This is often useful on client side.
  * @param formData
  */
-export const constructFromFormData = (formData: FormData) => {
+const constructFromFormData = (formData: FormData) => {
     const urlSearchParams = new URLSearchParams(formData as any);
     return constructFromQueryString(urlSearchParams.toString());
+}
+
+export {
+    Fieldset,
+    Input, Button, Select, Textarea,
+    namespaceAware,
+    constructFromQueryString, constructFromFormData,
 }
