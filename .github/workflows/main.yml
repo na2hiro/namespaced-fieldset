@@ -1,0 +1,61 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Use Node 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build
+        run: npm run build
+
+  test:
+    name: Unit and Integration Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Use Node 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Test
+        run: npm run test -- --coverage
+
+#  lint:
+#    name: Linter
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repo
+#        uses: actions/checkout@v2
+#
+#      - name: Use Node 16
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: 16
+#
+#      - name: Install dependencies
+#        uses: bahmutov/npm-install@v1
+#
+#      - name: Build
+#        run: npm run build
+#
+#      - name: Lint
+#        run: npm run lint

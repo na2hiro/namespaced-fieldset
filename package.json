@@ -33,6 +33,7 @@
   "devDependencies": {
     "@testing-library/react": "^8",
     "@types/react": "^16.9",
+    "c8": "^7.11.0",
     "jsdom": "^19.0.0",
     "microbundle": "^0.14.2",
     "react": "^16.14",
