@@ -116,3 +116,14 @@ export default function () {
 
 1. User submits `<Form>`, then remix (or browser) serializes inputs to query string and sends it to server
 2. In `action()` or `loader()`, you can construct an object from the query string given by `request.text()`
+
+### Config for Remix
+
+The package is bundled with ESM. Add the package to [`serverDependenciesToBundle`](https://remix.run/docs/en/v1/api/conventions#serverdependenciestobundle) in `remix.config.js` so it gets compiled.
+
+```javascript
+module.exports = {
+  /* ... */
+  serverDependenciesToBundle: ['namespaced-fieldset'],
+};
+```
